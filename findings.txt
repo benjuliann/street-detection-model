@@ -1,0 +1,10 @@
+CURRENTLY DETECT:
+- cars
+- trucks
+- person
+- bike
+- traffic light
+
+NEEDS WORK:
+- pedestrian sign
+- 
