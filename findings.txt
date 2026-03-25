@@ -7,4 +7,6 @@ CURRENTLY DETECT:
 
 NEEDS WORK:
 - pedestrian sign
-- 
+- horizontal traffic light
+- crosswalks
+- yield sign
