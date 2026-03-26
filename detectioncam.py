@@ -3,7 +3,7 @@ import cv2
 import time
 from collections import deque
 
-model = YOLO('yolov8n.pt')
+model = YOLO('yolo11n.pt')
 
 # Only detect relevant classes (COCO class IDs)
 CLASSES = {
@@ -17,7 +17,7 @@ CLASSES = {
     11: 'stop sign',
 }
 
-WINDOW_NAME = 'YOLOv8 Detection'
+WINDOW_NAME = 'YOLO11 Detection'
 cv2.namedWindow(WINDOW_NAME, cv2.WINDOW_NORMAL)
 cv2.createTrackbar('Width',  WINDOW_NAME, 640,  1920, lambda x: None)
 cv2.createTrackbar('imgsz',  WINDOW_NAME, 640,  1280, lambda x: None)  # live inference size
