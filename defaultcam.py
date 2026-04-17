@@ -3,38 +3,21 @@ import cv2
 import time
 from collections import deque
 
-model = YOLO('best.pt')
+model = YOLO('yolo11n.pt')
 
 # Only detect relevant classes (COCO class IDs)
 CLASSES = {
-    # COCO subset
-    #0:  'person',
+    0:  'person',
     1:  'bicycle',
     2:  'car',
     3:  'motorcycle',
-    4:  'bus',
-    5:  'truck',
-    6:  'traffic light',
-    7:  'stop sign',
-    # Canadian signs (merged categories)
-    8:  'Speed-Limit',
-    9:  'Stop',
-    10: 'Yield',
-    11: 'Pedestrian-Crossing',
-    12: 'School-Zone',
-    13: 'Construction',
-    14: 'No-Entry',
-    15: 'No-Turn',
-    16: 'Railway-Crossing',
-    17: 'Animal-Crossing',
-    18: 'Warning',
-    19: 'Intersection',
-    20: 'Keep-Right',
-    21: 'No-Parking',
-    22: 'Cyclist-Related',
+    5:  'bus',
+    7:  'truck',
+    9:  'traffic light',
+    11: 'stop sign',
 }
 
-WINDOW_NAME = 'YOLO11 Upgraded Detection'
+WINDOW_NAME = 'YOLO11 Detection'
 cv2.namedWindow(WINDOW_NAME, cv2.WINDOW_NORMAL)
 cv2.createTrackbar('Width',  WINDOW_NAME, 640,  1920, lambda x: None)
 cv2.createTrackbar('imgsz',  WINDOW_NAME, 640,  1280, lambda x: None)  # live inference size

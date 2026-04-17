@@ -3,7 +3,7 @@ import cv2
 import time
 from collections import deque
 
-model = YOLO('yolo11n.pt')
+model = YOLO('best.pt')
 
 # Only detect relevant classes (COCO class IDs)
 CLASSES = {
@@ -15,6 +15,10 @@ CLASSES = {
     7:  'truck',
     9:  'traffic light',
     11: 'stop sign',
+    80: 'turn-left',
+    81: 'turn-right',
+    82: 'yield',
+    83: 'dead-end'
 }
 
 WINDOW_NAME = 'YOLO11 Detection'
@@ -31,8 +35,7 @@ for result in model(
     source=0,
     stream=True,
     conf=0.35,
-    imgsz=640,                        # start conservative, adjust via trackbar
-    classes=list(CLASSES.keys()),     # ignore all other COCO classes
+    imgsz=640
 ):
     frame = result.plot()
 
